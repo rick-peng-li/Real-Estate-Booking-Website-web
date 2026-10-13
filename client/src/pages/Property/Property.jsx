@@ -11,7 +11,7 @@ import { AiTwotoneCar } from "react-icons/ai";
 import { MdLocationPin, MdMeetingRoom } from "react-icons/md";
 import Map from "../../components/Map/Map";
 import useAuthCheck from "../../hooks/useAuthCheck";
-import { useAuth0 } from "@auth0/auth0-react";
+import { useAuth } from "../../auth/AuthProvider";
 import BookingModal from "../../components/BookingModal/BookingModal";
 import UserDetailContext from "../../context/UserDetailContext.js";
 import { Button } from "@mantine/core";
@@ -26,7 +26,7 @@ const Property = () => {
 
   const [modalOpened, setModalOpened] = useState(false);
   const { validateLogin } = useAuthCheck();
-  const { user } = useAuth0();
+  const { user } = useAuth();
 
   const {
     userDetails: { token, bookings },

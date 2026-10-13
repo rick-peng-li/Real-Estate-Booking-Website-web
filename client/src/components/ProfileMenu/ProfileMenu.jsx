@@ -6,7 +6,9 @@ const ProfileMenu = ({user, logout}) => {
   return (
     <Menu>
         <Menu.Target>
-            <Avatar src={user?.picture} alt='user image' radius={"xl"}/>
+            <Avatar src={user?.picture} alt='user image' radius={"xl"} color="blue">
+                {user?.name?.[0]?.toUpperCase() || user?.email?.[0]?.toUpperCase()}
+            </Avatar>
         </Menu.Target>
         <Menu.Dropdown>
             <Menu.Item onClick={()=> navigate("./favourites", {replace: true})}>

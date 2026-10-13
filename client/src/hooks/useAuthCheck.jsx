@@ -1,10 +1,10 @@
-import {useAuth0} from '@auth0/auth0-react'
+import {useAuth} from '../auth/AuthProvider'
 import { toast } from "react-toastify";
 
 
 const useAuthCheck = () => {
 
-    const {isAuthenticated} = useAuth0()
+    const {isAuthenticated} = useAuth()
     const validateLogin = () => {
         if(!isAuthenticated)
         {

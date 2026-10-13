@@ -1,13 +1,13 @@
 import React, { useContext, useEffect, useRef } from "react";
 import UserDetailContext from "../context/UserDetailContext";
 import { useQuery } from "react-query";
-import { useAuth0 } from "@auth0/auth0-react";
+import { useAuth } from "../auth/AuthProvider";
 import { getAllBookings, getAllFav } from "../utils/api";
 
 const useBookings = () => {
   const { userDetails, setUserDetails } = useContext(UserDetailContext);
   const queryRef = useRef();
-  const { user } = useAuth0();
+  const { user } = useAuth();
 
   const { data, isLoading, isError, refetch } = useQuery({
     queryKey: "allBookings",
